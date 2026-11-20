@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekomendasi Jurusan & Kampus Impian</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js untuk Grafik Visualisasi -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="hero">
+        <div class="container hero-content">
+            <div>
+                <span class="badge">Sistem Rekomendasi Karir & Studi</span>
+                <h1>Rekomendasi Jurusan & Kampus Impian</h1>
+                <p>Temukan program studi unggulan dan target skor UTBK-SNBT berdasarkan kepribadian dan minat Anda.</p>
+            </div>
+            <button id="theme-toggle" class="btn-theme" title="Ubah Tema">🌙</button>
+        </div>
+    </header>
 
+    <main class="container">
+        <!-- Panel Pemilihan Karakter -->
+        <section class="card selection-panel">
+            <div class="panel-header">
+                <h2>1. Pilih Karakter & Minat Anda</h2>
+                <div class="filter-bar">
+                    <button class="filter-btn active" data-filter="all">Semua</button>
+                    <button class="filter-btn" data-filter="alam">🌿 Alam & Sains</button>
+                    <button class="filter-btn" data-filter="logika">💻 Logika & Tech</button>
+                    <button class="filter-btn" data-filter="sosial">🤝 Sosial & Bisnis</button>
+                    <button class="filter-btn" data-filter="medis">🩺 Medis & Empati</button>
+                </div>
+            </div>
+
+            <div id="traits-grid" class="traits-grid"></div>
+
+            <div class="action-bar">
+                <div class="selected-info">
+                    Terpilih: <strong id="selected-count">0</strong> karakteristik
+                </div>
+                <div class="action-buttons">
+                    <button id="btn-reset" class="btn btn-secondary">Reset Pilihan</button>
+                    <button id="btn-analyze" class="btn btn-primary">Analisis Sekarang 🚀</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Panel Hasil Rekomendasi -->
+        <section id="result-section" class="result-section hidden">
+            <div class="result-top-bar">
+                <h2>2. Hasil Rekomendasi & Analisis Grafik</h2>
+                <button id="btn-print" class="btn btn-secondary">🖨️ Cetak / Unduh Laporan</button>
+            </div>
+
+            <!-- Grafik Chart.js -->
+            <div class="card chart-card">
+                <h3>Visualisasi Tingkat Kecocokan Program Studi</h3>
+                <div class="chart-container">
+                    <canvas id="matchChart"></canvas>
+                </div>
+            </div>
+
+            <div id="recommendations-list" class="recommendations-grid"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Aplikasi Rekomendasi Jurusan & Universitas • Berbasis Data SNBT</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
